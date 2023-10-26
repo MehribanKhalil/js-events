@@ -10,6 +10,7 @@ body{
 .divElementi{
    display: flex;
    justify-content: space-between;
+   width: 600px;
 }
 
 .xett{

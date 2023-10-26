@@ -2,23 +2,7 @@
 const input = document.getElementById("input");
 const btn = document.getElementById("btn");
 const container = document.querySelector(".container");
-// 2
-// const inputValue = document.querySelector('#input').value;
-// console.log(inputValue);
-
-// input.addEventListener('keypress',()=>{
-//     console.log(input.value);
-// })
-
-// 3
-
-// btn.addEventListener('click',()=>{
-//     input.value=' '
-// })
-
-// 4
-
-//5
+// let todoInpMode=document.create
 
 btn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -34,17 +18,19 @@ btn.addEventListener("click", (event) => {
   container.append(divElementi);
   trashIcn.innerHTML = '<i class="fa-solid fa-trash"></i>';
 
-  childDiv1.addEventListener("click", () => {
-    childDiv1.classList.toggle("xett");
-  });
-
-  trashIcn.addEventListener("click", (e) => {
-    divElementi.remove();
-  });
-
   divElementi.append(childDiv1, trashIcn, edit);
   childDiv1.innerHTML = input.value;
   edit.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+
+
+  childDiv1.addEventListener("click", () =>childDiv1.classList.toggle("xett"));
+
+  trashIcn.addEventListener("click", () => divElementi.remove());
+
+  edit.onclick=()=>{
+    input.value=childDiv1.textContent
+    btn.textContent="edit"
+  }
 
   input.value = "";
 });
